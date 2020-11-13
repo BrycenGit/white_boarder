@@ -21,19 +21,24 @@ const urlMaker = (input) => {
 }
 
 const recursiveUrl = (input, counter = 0) => {
+  console.log(counter)
  if (!Array.isArray(input)) {
    inputArray = input.split('')
  } else {
    inputArray = input
  }
  if (counter >= inputArray.length) {
-   return inputArray.join('')
+   return inputArray
  } else {
-  if (inputArray[counter] == ' ') {
-    inputArray[counter].slice(0, -1).push('%20')
+  if (inputArray[counter] === ' ') {
+    inputArray.splice(counter, 1, '%20')
+    console.log(inputArray)
+    console.log('here')
   }
+  console.log(inputArray[counter])
   recursiveUrl(inputArray, counter + 1)
  }
+ return inputArray.join('')
 }
 
 // Question #2: Array Deduping
