@@ -35,3 +35,40 @@ const recursiveUrl = (input, counter = 0) => {
   recursiveUrl(inputArray, counter + 1)
  }
 }
+
+// Question #2: Array Deduping
+// Write an algorithm that removes duplicates from an array. Do not use a function like filter() to solve this. Once you have solved the problem, demonstrate how it can be solved with filter(). Solve the problem with and without recursion.
+
+// Example
+// Input: [7, 9, "hi", 12, "hi" 7, 53]
+
+// Output: [7, 9, "hi", 12, 53]
+
+
+const arr = [1,1,2,3,4,5,5,6]
+
+const filterDup = (inp) => {
+  return inp.filter((e, i) => inp.indexOf(e) === i)
+}
+
+// Question #3: Compressing Strings
+// Write an algorithm that takes a string with repeated characters and compresses them, using a number to show how many times the repeated character has been compressed. For instance, aaa would be written as 3a. Solve the problem with and without recursion.
+
+// Example
+// Input: "aaabccdddda"
+
+// Output: "3ab2c4da"
+
+const unique = (str) => {
+  for (let i = 0; i < str.length; i++) {
+    for (let x = i + 1; x < str.length; x++) {
+      if (str[i] === str[x]) {
+        return false
+      }
+    }
+  }
+  return true;
+}
+
+
+
