@@ -64,6 +64,30 @@ const filterDup = (inp) => {
 
 // Output: "3ab2c4da"
 
+const compressor = (str) => {
+  result = []
+  counter = 0
+  for (let i = 0; i < str.length; i += counter) {
+    counter = 0
+    for (let x = i; x < str.length; x++) {
+
+      if (str[i] === str[x] ) {
+        counter += 1
+      } else {
+        break;
+      }
+    }
+    if (counter > 1) {
+      result.push(`${counter}${str[i]}`)
+    } else {
+      result.push(`${str[i]}`)
+    }
+
+  }
+  return result.join('');
+}
+
+
 const unique = (str) => {
   for (let i = 0; i < str.length; i++) {
     for (let x = i + 1; x < str.length; x++) {
