@@ -7,6 +7,7 @@
 // Input: "Jasmine Ann Jones"
 
 // Output: "Jasmine%20Ann%20Jones"
+
 const urlMaker = (input) => {
   let result = []
   inputArray = input.split('')
@@ -49,7 +50,6 @@ const recursiveUrl = (input, counter = 0) => {
 
 // Output: [7, 9, "hi", 12, 53]
 
-
 const arr = [1,1,2,3,4,5,5,6]
 
 const filterDup = (inp) => {
@@ -70,19 +70,15 @@ const compressor = (str) => {
   for (let i = 0; i < str.length; i += counter) {
     counter = 0
     for (let x = i; x < str.length; x++) {
-
       if (str[i] === str[x] ) {
         counter += 1
-      } else {
-        break;
-      }
+      } else { break; }
     }
     if (counter > 1) {
       result.push(`${counter}${str[i]}`)
     } else {
       result.push(`${str[i]}`)
     }
-
   }
   return result.join('');
 }
